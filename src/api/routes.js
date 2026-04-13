@@ -1,10 +1,13 @@
 const express = require('express');
-const gachaRoute = require('./components/gacha/gacha.route');
-const prizeRoute = require('./components/prize/prize.route');
 
 const router = express.Router();
 
-router.use('/gacha', gachaRoute);
-router.use('/prizes', prizeRoute);
+const orderRoutes = require('./components/order/orderRoutes');
+const menuRoutes = require('./components/menu/menuRoutes');
+const customerRoutes = require('./components/customer/customerRoutes');
+
+router.use('/orders', orderRoutes);
+router.use('/menus', menuRoutes);
+router.use('/customers', customerRoutes);
 
 module.exports = router;
