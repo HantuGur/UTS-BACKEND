@@ -31,7 +31,7 @@ exports.getOrders = async (req, res) => {
   }
 };
 
-const Order = require("../../../models/orderModel");
+const Order = require('../../../models/orderModel');
 
 // GET BY ID
 exports.getOrderById = async (req, res) => {
@@ -47,7 +47,7 @@ exports.getOrderById = async (req, res) => {
 exports.deleteOrder = async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
-    res.json({ message: "Order deleted" });
+    res.json({ message: 'Order deleted' });
   } catch (err) {
     res.status(500).json(err.message);
   }
