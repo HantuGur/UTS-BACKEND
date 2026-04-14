@@ -30,3 +30,25 @@ exports.getOrders = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+const Order = require("../../../models/orderModel");
+
+// GET BY ID
+exports.getOrderById = async (req, res) => {
+  try {
+    const data = await Order.findById(req.params.id);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
+
+// DELETE
+exports.deleteOrder = async (req, res) => {
+  try {
+    await Order.findByIdAndDelete(req.params.id);
+    res.json({ message: "Order deleted" });
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
