@@ -52,16 +52,14 @@ exports.deleteOrder = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
-const Order = require("../../../models/orderModel");
+const Order = require('../../../models/orderModel');
 
 // UPDATE
 exports.updateOrder = async (req, res) => {
   try {
-    const data = await Order.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const data = await Order.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json(data);
   } catch (err) {
     res.status(500).json(err.message);
