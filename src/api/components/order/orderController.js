@@ -1,4 +1,3 @@
-const Order = require('../../../models/orderModel');
 const calculateTotal = require('../../../utils/calculateTotal');
 
 // CREATE
@@ -31,8 +30,6 @@ exports.getOrders = async (req, res) => {
   }
 };
 
-const Order = require('../../../models/orderModel');
-
 // GET BY ID
 exports.getOrderById = async (req, res) => {
   try {
@@ -52,7 +49,6 @@ exports.deleteOrder = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
-const Order = require('../../../models/orderModel');
 
 // UPDATE
 exports.updateOrder = async (req, res) => {
