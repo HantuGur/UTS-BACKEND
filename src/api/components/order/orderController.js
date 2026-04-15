@@ -1,3 +1,4 @@
+const Order = require('../../../models/orderModel');
 const calculateTotal = require('../../../utils/calculateTotal');
 
 // CREATE
