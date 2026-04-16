@@ -11,9 +11,14 @@ app.use('/api', routes);
 
 // koneksi DB
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.DB_CONNECTION)
+  // eslint-disable-next-line no-console
   .then(() => console.log('MongoDB Connected'))
+  // eslint-disable-next-line no-console
   .catch((err) => console.log(err));
 
 const PORT = process.env.PORT || 5000;
+// eslint-disable-next-line no-console
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// jangan diubah lagi
