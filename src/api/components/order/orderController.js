@@ -51,11 +51,11 @@ exports.deleteOrder = async (req, res) => {
   }
 };
 
-// UPDATE
-exports.updateOrder = async (req, res) => {
+// FILTER STATUS
+exports.getByStatus = async (req, res) => {
   try {
-    const data = await Order.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+    const data = await Order.find({
+      status: req.params.status,
     });
     res.json(data);
   } catch (err) {
@@ -63,11 +63,11 @@ exports.updateOrder = async (req, res) => {
   }
 };
 
-// FILTER STATUS
-exports.getByStatus = async (req, res) => {
+// UPDATE
+exports.updateOrder = async (req, res) => {
   try {
-    const data = await Order.find({
-      status: req.params.status,
+    const data = await Order.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
     });
     res.json(data);
   } catch (err) {
